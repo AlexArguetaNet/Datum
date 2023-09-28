@@ -24,12 +24,32 @@
         </div>
 
 
+        <div class="sign-up-block" id="sign-up-block" onclick="showSignUp(event)">
 
+            <div class="landing-sign-up">
+                <h1>Sign up with Email</h1>
+                <form action="/user/create-user" method="POST">
 
+                    <div>
+                        <label for="name">Name</label><br>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label><br>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" required>
+                    </div>
 
-        <div class="sign-up-block" id="sign-up-block">
+                    <div class="landing-sign-up-button">
+                        <input type="submit" value="Create Account">
+                    </div>
 
-            <p>Hello</p>
+                </form>
+
+            </div>
 
         </div>
 

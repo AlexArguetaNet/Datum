@@ -1,7 +1,10 @@
+html {
+    height: 100%;
+}
 body {
-    width: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 a {
@@ -39,12 +42,59 @@ nav .links a:hover {
 
 /* index.ejs */
 
-#sign-up-block {
-    display: none;
-    width: 50%;
-    margin: 0 auto;
-    background-color: blue;
+.sign-up-block {
+    display: fixed;
+    justify-content: center;
     z-index: 10;
+    width: 100%;
+    height: 90vh;
+    display: none;
+}
+.sign-up-block .landing-sign-up {
+    background-color: white;
+    width: 30em;
+    margin: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.landing-sign-up {
+    padding: 3em 0;
+    position: fixed;
+    border-radius: 2em;
+    border: 1px solid gray;
+    justify-content: center;
+    align-items: center;
+}
+.landing-sign-up div {
+    margin-top: 1em;
+}
+.landing-sign-up input[type=text],
+.landing-sign-up input[type=email],
+.landing-sign-up input[type=password] {
+    font-size: 1em;
+    padding: .5em .7em;
+    border-radius: .7em;
+    width: 17em;
+    border: none;
+    margin-top: .3em;
+    background-color: rgb(216, 229, 255);
+}
+.landing-sign-up-button {
+    display: flex;
+    justify-content: center;
+}
+.landing-sign-up-button input[type=submit] {
+    width: 100%;
+    border: none;
+    background-color: #fd744e;
+    color: white;
+    margin-top: 1em;
+    padding: 1em 0em;
+    border-radius: 1em;
+}
+.landing-sign-up-button input[type=submit]:hover {
+    background-color: #ff9679;
 }
 
 .landing-page {
@@ -54,7 +104,11 @@ nav .links a:hover {
 .landing-page .content {
     margin: 0 auto;
     margin-top: 2em;
-    position: fixed;
+    /* 
+        fixed position causes html selector
+        to target only insdie nav bar
+     */
+     position: fixed;
     width: 50em;
     display: flex;
     flex-direction: row;
@@ -77,11 +131,15 @@ nav .links a:hover {
     padding: 3em 0;
     width: 50%;
 }
-.landing-page .right-block .sign-up-link {
+.landing-page .sign-up-link {
     color: white;
     background-color: #fd744e;
     padding: 1em;
     border-radius: 1em;
+}
+.landing-page .sign-up-link:hover {
+    background-color: #ff9679;
+    cursor: pointer;
 }
 .landing-page .right-block img {
     width: 15em;

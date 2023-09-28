@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const mainRouter = require('./routers/main');
+const userRouter = require('./routers/user');
 require('dotenv').config();
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(session({
     cookie: { secure: true }
 }));
 app.use(mainRouter);
+app.use('/user', userRouter);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
