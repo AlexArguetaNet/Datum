@@ -39,7 +39,7 @@ nav .links a:hover {
 
 /* index.ejs */
 
-.sign-up-block {
+#sign-up-block {
     display: none;
     width: 50%;
     margin: 0 auto;

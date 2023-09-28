@@ -1,13 +1,17 @@
 
+window.onload = () => {
+    // index.ejs
+    signUpBlock = document.getElementById("sign-up-block");
+    signUpBlock.style.display = "none";
+} 
+
+// index.ejs
 const showSignUp = () => {
 
-    var signUpDiv = document.getElementById("sign-up-block");
-
-    if (signUpDiv.style.display === "none") {
-        signUpDiv.style.display = "flex";
+    if (signUpBlock.style.display == "none") {
+        signUpBlock.style.display = "flex";
     } else {
-        signUpDiv.style.display = "none";
+        signUpBlock.style.display = "none";
     }
-
 
 }
