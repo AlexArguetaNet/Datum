@@ -1,0 +1,89 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+
+/* header.ejs */
+nav {
+    background-color: rgb(81, 118, 100);
+    color: white;
+}
+nav .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+}
+nav .links {
+    margin-left: auto;
+}
+nav .content h1 a {
+    color: white;
+}
+nav .links a {
+    margin-right: 1em;
+    padding: .3em .4em;
+    color: white;
+}
+nav .links a:hover {
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 1em;
+}
+
+/* index.ejs */
+
+.sign-up-block {
+    display: none;
+    width: 50%;
+    margin: 0 auto;
+    background-color: blue;
+}
+
+.landing-page {
+    display: flex;
+    justify-content: center;
+}
+.landing-page .content {
+    margin: 0 auto;
+    margin-top: 2em;
+    position: fixed;
+    width: 50em;
+    display: flex;
+    flex-direction: row;
+}
+.landing-page .left-block {
+    color: rgb(45, 51, 25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+.landing-page .right-block {
+    border: .1em solid gray;
+    border-radius: .8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2em;
+    padding: 3em 0;
+    width: 50%;
+}
+.landing-page .right-block .sign-up-link {
+    color: white;
+    background-color: #fd744e;
+    padding: 1em;
+    border-radius: 1em;
+}
+.landing-page .right-block img {
+    width: 15em;
+    height: 12em;
+}
+
