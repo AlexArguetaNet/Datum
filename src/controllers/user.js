@@ -22,11 +22,50 @@ exports.createUser = async (req, res, next) => {
 
 }
 
-// GET: Logout the user
-exports.logout = (req, res, next) => {
-    req.session.destroy();
-    res.redirect('/');
+
+// POST: Login the user
+exports.login = async (req, res, next) => {
+
+    const credentials = req.body;
+
+    /**
+     *  Checking if the user exists by searching
+     * for email in the database
+     */
+    User.findOne({ email: credentials.email })
+    .then((data) => {
+
+        if (data) {
+
+            // Compare password
+            bcrypt.compare(credentials.password, data.password)
+            .then((result) => {
+
+                if (result) {
+                    res.redirect(`/user/home/${data._id}`);
+                } else {
+                    console.log('Password Invalid');
+                    res.redirect('/login');
+                }
+                
+            })
+            .catch((err) => {
+                console.log(err);
+                res.redirect('/login');
+            });
+
+        } else {
+            console.log('Email invalid');
+            res.redirect('/login');
+        }
+
+    })
+    .catch((err) => {
+        console.log
+    });
+
 }
+
 
 // GET: Get the use home page
 exports.getUserHomePage = (req, res, next) => {
@@ -39,7 +78,7 @@ exports.getUserHomePage = (req, res, next) => {
         
         
         req.session.user = data;
-
+        res.locals.userAuth = data;
         req.session.save(() => {
             res.render('user/home', { user: data });
         });
@@ -49,4 +88,10 @@ exports.getUserHomePage = (req, res, next) => {
         next(err);
     });
 
+}
+
+// GET: Logout the user
+exports.logout = (req, res, next) => {
+    req.session.destroy();
+    res.redirect('/');
 }

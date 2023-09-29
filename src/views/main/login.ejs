@@ -2,8 +2,25 @@
 
     <div class="login-page">
         <div class="content">
-            <h1>Login</h1>
-        </div>
+            <h1>Hello Again!</h1>
+
+            <form action="/user/login" method="POST">
+
+                <div>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" required>
+                </div>
+                <div class="login-page-button">
+                    <input type="submit" value="Login">
+                </div>
+
+            </form>
+
+
     </div>
 
 <%- include('../partials/footer.ejs') %>

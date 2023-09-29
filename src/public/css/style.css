@@ -145,3 +145,49 @@ nav .links a:hover {
     height: 12em;
 }
 
+
+/* login.ejs */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-page .content {
+    border: 1px solid black;
+    width: 30em;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+    border-radius: 1em;
+}
+.login-page .content div {
+    margin-top: 1em;
+}
+.login-page input[type=email],
+.login-page input[type=password] {
+    font-size: 1em;
+    padding: .5em .7em;
+    border-radius: .7em;
+    width: 17em;
+    border: none;
+    margin-top: .3em;
+    background-color: rgb(216, 229, 255);
+}
+.login-page-button {
+    display: flex;
+    justify-content: center;
+}
+.login-page-button input[type=submit] {
+    width: 100%;
+    background-color: #fd744e;
+    padding: 1em;
+    border-radius: 1em;
+    border: none;
+}
+.login-page-button input[type=submit]:hover {
+    background-color: #ff9679;
+}
