@@ -62,7 +62,6 @@ nav .links a:hover {
     padding: 3em 0;
     position: fixed;
     border-radius: 2em;
-    border: 1px solid gray;
     justify-content: center;
     align-items: center;
 }
