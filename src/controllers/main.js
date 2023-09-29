@@ -2,9 +2,6 @@
 // GET: Get landing page
 exports.getLandingPage = (req, res) => {
 
-
-    console.log(req.session);
-
     // Check if user is logged in
     if (req.session.user) {
         res.redirect(`/user/home/${req.session.user._id}`);
@@ -12,4 +9,9 @@ exports.getLandingPage = (req, res) => {
         res.render('index');
     }
 
+}
+
+// GET: Get the login page
+exports.getLoginPage = (req, res) => {
+    res.render('main/login');
 }
