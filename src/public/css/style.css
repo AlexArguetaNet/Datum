@@ -191,3 +191,45 @@ nav .links a:hover {
 .login-page-button input[type=submit]:hover {
     background-color: #ff9679;
 }
+
+
+/* Contact Us */
+.contact-us-page {
+}
+.contact-us-page h1 {
+    text-align: center;
+}
+.contact-us-page img {
+    width: 15em;
+    height: 13em;
+}
+.contact-us-page .content {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+.contact-us-page .content-block {
+    border: 1px solid red;
+    width: 22em;
+    margin: 1em .6em;
+}
+.contact-us-page .left-block {
+    display: flex;
+    justify-content: center;
+}
+.contact-us-page input[type=text],
+.contact-us-page input[type=email]{
+    font-size: 1em;
+    padding: .5em .7em;
+    border-radius: .7em;
+    width: 17em;
+    border: none;
+    margin-top: .3em;
+    background-color: rgb(216, 229, 255);
+}
+

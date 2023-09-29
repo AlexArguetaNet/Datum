@@ -78,7 +78,7 @@ exports.getUserHomePage = (req, res, next) => {
         
         
         req.session.user = data;
-        res.locals.userAuth = data;
+        res.locals.loggedIn = data;
         req.session.save(() => {
             res.render('user/home', { user: data });
         });

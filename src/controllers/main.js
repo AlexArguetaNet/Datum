@@ -13,15 +13,15 @@ exports.getLandingPage = (req, res) => {
 
 // GET: Get the about us page
 exports.getAboutPage = (req, res) => {
-    res.render('main/about', { userAuth: req.session.user });
+    res.render('main/about', { loggedIn: req.session.user });
 }
 
 // GET: Get the contact us page
 exports.getContactUsPage = (req, res) => {
-    res.render('main/contactUs');
+    res.render('main/contactUs', { loggedIn: req.session.user });
 }
 
 // GET: Get the login page
 exports.getLoginPage = (req, res) => {
-    res.render('main/login');
+    res.render('main/login', { loggedIn: req.session.user });
 }
