@@ -17,8 +17,7 @@ app.use(express.static('src/public'));
 app.use(session({
     secret: "mysecret",
     saveUninitialized: true,
-    resave: false,
-    cookie: { secure: true }
+    resave: false
 }));
 app.use(mainRouter);
 app.use('/user', userRouter);
