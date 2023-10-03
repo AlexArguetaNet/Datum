@@ -1,5 +1,35 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1>Welcome <%- user.name %></h1>
+    <div class="user-home-page">
+        <div class="content">
+            <div class="user-nav">
+                <button onclick="showPopUp(event)">New Collection</button>
+            </div>
+            <div class="grid-block">
+                <div class="recent-bar">
+                    <span>Recent</span>
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="grid">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="popup collection-form-block" onclick="showPopUp(event)">
+            <div class="collection-form" id="collection-form">
+                <form action="/user/create-collection">
+    
+                    <h3>Name your new collection</h3>
+                    <input type="text" name="name" required><br>
+    
+                    <input type="submit" value="Create">
+    
+    
+                </form>
+            </div>
+        </div>
+    </div>
 
 <%- include('../partials/footer.ejs') %>
