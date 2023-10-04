@@ -298,10 +298,11 @@ nav .links a:hover {
     background-color: rgb(239, 239, 255);
     border: 1px solid rgb(206, 206, 206);
     border-radius: .3em;
-    width: 8em;
+    width: 6em;
+    
     height: 10em;
-    display: flex;
+    display: inline-block;
     margin: .5em 1.5em;
     inline-size: 150px;
-    overflow: hidden;
+    overflow-wrap: break-word;
 }
