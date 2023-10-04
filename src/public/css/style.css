@@ -289,11 +289,11 @@ nav .links a:hover {
     margin-top: .5em;
 }
 .user-home-page .grid {
-    width: 85%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    height: 35em;
+    height: 30em;
     overflow: scroll;
 }
 
@@ -302,10 +302,9 @@ nav .links a:hover {
     border: 1px solid rgb(206, 206, 206);
     border-radius: .3em;
     width: 6em;
-
     height: 10em;
     display: inline-block;
-    margin: .5em 1.5em;
+    margin: .2em 1.5em;
     inline-size: 150px;
     overflow-wrap: break-word;
 }
