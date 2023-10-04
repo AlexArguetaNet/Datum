@@ -1,8 +1,9 @@
 const { Router } = require('express');
-const { createCollection } = require('../controllers/form');
+const { createCollection, getCollection } = require('../controllers/form');
 
 const router = Router();
 
-router.post('/create-collection/', createCollection);
+router.get('/collection/:id', getCollection);
+router.post('/create-collection', createCollection);
 
 module.exports = router;

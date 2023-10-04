@@ -236,6 +236,9 @@ nav .links a:hover {
     display: flex;
     justify-content: center;
 }
+.user-home-page .content {
+    position: fixed;
+}
 .user-home-page .user-nav {
     background-color: rgb(255, 198, 159);
     border-radius: .7em;
@@ -286,7 +289,7 @@ nav .links a:hover {
     margin-top: .5em;
 }
 .user-home-page .grid {
-    width: 90%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -299,10 +302,13 @@ nav .links a:hover {
     border: 1px solid rgb(206, 206, 206);
     border-radius: .3em;
     width: 6em;
-    
+
     height: 10em;
     display: inline-block;
     margin: .5em 1.5em;
     inline-size: 150px;
     overflow-wrap: break-word;
+}
+.user-home-page .collection-grid-item {
+    margin-left: 1em;
 }
