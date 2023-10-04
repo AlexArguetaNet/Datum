@@ -37,5 +37,4 @@ exports.createCollection = (req, res, next) => {
         res.json({msg:err});
     });
 
-
 }

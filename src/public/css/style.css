@@ -293,7 +293,7 @@ nav .links a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    height: 35em;
+    height: fit-content;
     overflow: scroll;
 }
 
@@ -311,4 +311,27 @@ nav .links a:hover {
 }
 .user-home-page .collection-grid-item {
     margin-left: 1em;
+}
+.user-home-page .content {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* collection.ejs */
+
+.collection-page .content {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 50em;
+    width: 90%;
+    
+}
+.collection-page .favorites-bar {
+    height: 80vh;
+    border: 1px solid black;
 }
