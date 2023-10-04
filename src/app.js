@@ -4,6 +4,7 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 const mainRouter = require('./routers/main');
 const userRouter = require('./routers/user');
+const formRouter = require('./routers/form');
 require('dotenv').config();
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(session({
 }));
 app.use(mainRouter);
 app.use('/user', userRouter);
+app.use('/form', formRouter);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {

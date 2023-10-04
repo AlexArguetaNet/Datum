@@ -13,13 +13,23 @@
                     </ul>
                 </div>
                 <div class="grid">
-                    
+
+                    <% collections.forEach((e) => { %>
+
+                        <a href="/user/collection/<%- e._id %>">
+                            <div class="collection-grid-item">
+                                <p> <%- e.name %> </p>
+                            </div>
+                        </a>
+
+                    <% }) %>
+
                 </div>
             </div>
         </div>
         <div class="popup collection-form-block" onclick="showPopUp(event)">
             <div class="collection-form" id="collection-form">
-                <form action="/user/create-collection">
+                <form action="/form/create-collection" method="POST">
     
                     <h3>Name your new collection</h3>
                     <input type="text" name="name" required><br>
