@@ -7,6 +7,7 @@ exports.getCollection = (req, res, next) => {
 
     mCollection.findById(req.params.id)
     .then((data) => {
+        res.locals.loggedIn = true;
         res.render('form/collection', { collection: data });
     })
     .catch((err) => {
