@@ -1,9 +1,6 @@
 
 window.onload = () => {
     
-    htmlNode = document.getElementsByTagName("html")[0];
-    htmlNode.id = "html";
-
     popUpElem = document.getElementsByClassName("popup")[0];
     popUpElem.style.display = "none";
 } 
