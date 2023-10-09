@@ -130,10 +130,10 @@ nav .links a:hover {
     font-size: 1.5em;
     padding-bottom: 6em;
 }
-.sign-up-button {
+.popup-button.sign-up {
     background-color: rgb(229, 89, 52);
 }
-.sign-up-button:hover {
+.popup-button.sign-up:hover {
     background-color: rgb(247, 114, 77);
 }
 .landing-page img {
@@ -152,21 +152,23 @@ nav .links a:hover {
 }
 .home-page .con-2 {
     background-color: white;
+    height: 80vh;
 }
-.home-page .con-2 .empty .item {
+.home-page .con-2 .empty {
+    margin-top: 100px;
+}
+.home-page .con-2 .empty .popup-button {
     width: 80px;
     margin: 0 5px;
     background-color: rgb(15, 24, 75);
     color: white;
     text-align: center;
 }
-.home-page .con-2 .empty a {
-    padding: 9px 6px;
-    border-radius: 5px;
-    font-size: 14px;
-}
 .con-2 .empty .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.popup-form.create-form-form {
+    height: 40vh;
 }

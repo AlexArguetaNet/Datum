@@ -14,14 +14,20 @@
 
                         <h3>Looks like you have no records!</h3>
                         <div class="buttons">
-                            <button onclick="showPopUp(event)" class="item">+ Collection</button>
-                            <a href="/form/create-form-page" class="item">+Form</a>
+                            <button onclick="showPopUp(event)" class="popup-button create-collection">+ Collection</button>
+                            <button onclick="showPopUp(event)" class="popup-button create-form">+ Form</button>
                         </div>
                         
 
                     </div>
 
-                <% } %>
+                <% } else { %>
+
+
+
+
+
+                <% }%>
 
             </div>
             <div class="form-grid">
@@ -30,9 +36,9 @@
 
         </div>
     </div>
-    <div class="popup create-collection" onclick="showPopUp(event)">
+    <div class="popup create-collection" onclick="closePopUp(event)">
 
-        <div class="popup-form sign-up-form">
+        <div class="popup-form create-collection-form">
             <h2>Name your collection</h2>
             <form action="/user/create-user" method="POST">
 
@@ -45,5 +51,21 @@
 
             </form>
         </div>
+    </div>
+    <div class="popup create-form" onclick="closePopUp(event)">
+        <div class="popup-form create-form-form">
+            <h2>Name your form</h2>
+            <form action="/user/create-user" method="POST">
+
+                <div class="form-input-container">
+                    <input type="text" name="name" required>
+                </div>
+                
+
+                <input type="submit" class="popup-submit" value="Create">
+
+            </form>
+        </div>
+    </div>
 
 <%- include('../partials/footer.ejs') %>
