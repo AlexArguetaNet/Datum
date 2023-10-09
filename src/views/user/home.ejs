@@ -2,11 +2,23 @@
 
     <div class="page-container home-page">
         <div class="content-container con-1">
-            <h1>Hello <%- user.name %></h1>   
+            <h1>Hello <%- user.name %></h1>  
+            <% if (collections.length != 0) { %>
+                <div class="buttons">
+                    <button onclick="showPopUp(event)" class="popup-button create-collection">+ Collection</button>
+                    <button onclick="showPopUp(event)" class="popup-button create-form">+ Form</button>
+                </div>
+            <% } %> 
         </div>
         <div class="content-container con-2">
 
-            <div class="collection-grid">
+            <p>Forms</p>
+            <div class="forms">
+                
+            </div>
+
+            <p>Collections</p>
+            <div class="collections">
                 
                 <% if (collections.length == 0) { %>
 
@@ -24,14 +36,18 @@
 
                 <% } else { %>
 
+                    <% collections.forEach((collection) => { %>
 
+                        <a href="/form/collection/<%- collection._id %>">
+                            <div class="item">
+                                <h3><%- collection.name %></h3>
+                            </div>
+                        </a>
 
+                    <% }) %>
 
 
                 <% }%>
-
-            </div>
-            <div class="form-grid">
 
             </div>
 
@@ -41,7 +57,7 @@
 
         <div class="popup-form create-collection-form">
             <h2>Name your collection</h2>
-            <form action="/user/create-user" method="POST">
+            <form action="/form/create-collection" method="POST">
 
                 <div class="form-input-container">
                     <input type="text" name="name" required>

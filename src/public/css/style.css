@@ -41,7 +41,7 @@ button {
     padding: 3em 5em;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 .popup-form input {
     width: 15em;
@@ -71,8 +71,7 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 990px;
-    border-radius: 7px;
-
+    border-radius: 4px;
     margin: 0 auto;
 }
 .content-item {
@@ -147,15 +146,27 @@ nav .links a:hover {
 .home-page .con-1 {
     width: 100%;
     justify-content: left;
+    align-items: center;
     box-sizing: border-box;
     padding: 0 20px;
 }
+.home-page .con-1 .buttons {
+    margin-top: 30px;
+    margin-left: auto;
+}
+.home-page .con-1 .buttons button {
+    background-color: rgb(219, 219, 255);
+    padding: 9px 9px;
+    border-radius: 20px;
+}
 .home-page .con-2 {
     background-color: white;
-    height: 80vh;
+    height: 780px;
 }
 .home-page .con-2 .empty {
     margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 .home-page .con-2 .empty .popup-button {
@@ -176,4 +187,28 @@ nav .links a:hover {
 .home-page img {
     width: 300px;
     height: 200px;
+}
+.home-page .collections {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    border: 1px solid blue;
+}
+.home-page .collections a {
+    background-color: rgb(228, 228, 228);
+    margin: 5px;
+    width: 130px;
+    height: 150px;
+    border-radius: 7px;
+}
+.home-page p {
+    margin-right: auto;
+    padding-left: 10px;
+}
+.home-page .forms {
+    width: 100%;
+    height: 290px;
+    border: 1px solid black;
+    margin-bottom: auto;
 }
