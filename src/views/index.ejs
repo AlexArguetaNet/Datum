@@ -1,18 +1,17 @@
 <%- include('./partials/header.ejs') %>
 
-    <div class="landing-page">
+    <div class="page-container landing-page">
 
         <div class="content-container con-1">
 
             <div class="content-item item-1">
                 <h2>Start by making a free account today!</h2>
-                <button class="sign-up-button">
+                <button class="sign-up-button" onclick="showPopUp(event)">
                     Sign up
                 </button>
             </div>
             <div class="content-item item-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quos ea optio, distinctio ipsa sit nemo odit veritatis numquam maiores fugiat, voluptates, explicabo illum aliquid possimus praesentium facere. Sequi, perferendis?</p>
-
+                <h2>Forms to help keep your work and life organized</h2>
             </div>
             <div class="content-item item-3">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quos ea optio, distinctio ipsa sit nemo odit veritatis numquam maiores fugiat, voluptates, explicabo illum aliquid possimus praesentium facere. Sequi, perferendis?</p>
@@ -22,5 +21,30 @@
         </div>
 
     </div>
+    <div class="popup sign-up" onclick="showPopUp(event)">
+
+        <div class="popup-form sign-up-form">
+            <h2>Sign up with Email</h2>
+            <form action="/user/create">
+
+                <div class="form-input">
+                    <label for="name">Name</label><br>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-input">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-input">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" required>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    
+    
 
 <%- include('./partials/footer.ejs') %>
