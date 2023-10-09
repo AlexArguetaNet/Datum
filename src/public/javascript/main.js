@@ -1,6 +1,7 @@
 
 window.onload = () => {
     
+    // Check for popup elements in the html
     try {
         popUpElements = document.getElementsByClassName("popup");
     
@@ -17,7 +18,6 @@ window.onload = () => {
 const showPopUp = (event) => {
 
     const popUpElem = document.querySelectorAll('.popup.' + event.target.classList[1])[0];
-
     if (popUpElem.style.display == "none") {
         popUpElem.style.display = "block";
     }

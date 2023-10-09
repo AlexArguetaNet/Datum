@@ -71,7 +71,8 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 990px;
-    border: 1px solid black;
+    border-radius: 7px;
+
     margin: 0 auto;
 }
 .content-item {
@@ -144,7 +145,6 @@ nav .links a:hover {
 
 /* home.ejs */
 .home-page .con-1 {
-    border: 1px solid black;
     width: 100%;
     justify-content: left;
     box-sizing: border-box;
@@ -156,11 +156,12 @@ nav .links a:hover {
 }
 .home-page .con-2 .empty {
     margin-top: 100px;
+    text-align: center;
 }
 .home-page .con-2 .empty .popup-button {
     width: 80px;
     margin: 0 5px;
-    background-color: rgb(15, 24, 75);
+    background-color: rgb(21, 33, 102);
     color: white;
     text-align: center;
 }
@@ -171,4 +172,8 @@ nav .links a:hover {
 }
 .popup-form.create-form-form {
     height: 40vh;
+}
+.home-page img {
+    width: 300px;
+    height: 200px;
 }
