@@ -31,6 +31,7 @@ button {
     width: 100%;
     height: 100vh;
     z-index: 10;
+    background-color: rgba(0, 0, 0, .5);
 }
 .popup-form {
     background-color: rgb(255, 255, 255);
@@ -45,12 +46,26 @@ button {
 }
 .popup-form input {
     width: 15em;
-    margin-top: 3px;
     background-color: rgb(216, 216, 255);
     border: none;
+    font-size: 1em;
+    border-radius: 7px;
+    padding: 5px 10px;
+    margin-top: 3px;
 }
-.form-input {
-    margin: 20px 0;
+.popup-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup-form input[type=submit]{
+    background-color: rgb(255, 133, 99);
+    margin-top: 15px;
+    width: 70%;
+}
+.form-input-container {
+    margin: 10px 0;
 }
 .content-container {
     display: flex;
@@ -62,6 +77,8 @@ button {
     display: flex;
     justify-content: center;
 }
+
+
 
 /* header.ejs */
 nav {

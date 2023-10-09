@@ -25,22 +25,22 @@
 
         <div class="popup-form sign-up-form">
             <h2>Sign up with Email</h2>
-            <form action="/user/create">
+            <form action="/user/create" method="POST">
 
-                <div class="form-input">
+                <div class="form-input-container">
                     <label for="name">Name</label><br>
                     <input type="text" name="name" required>
                 </div>
-                <div class="form-input">
+                <div class="form-input-container">
                     <label for="email">Email</label><br>
                     <input type="email" name="email" required>
                 </div>
-                <div class="form-input">
+                <div class="form-input-container">
                     <label for="password">Password</label><br>
                     <input type="password" name="password" required>
                 </div>
 
-                <input type="submit" value="Create Account">
+                <input type="submit" class="popup-submit" value="Create Account">
 
             </form>
         </div>
