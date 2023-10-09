@@ -19,11 +19,10 @@ button {
     border: none;
     border-radius: 5px;
     padding: 10px 0;
-    color: white;
+    cursor: pointer;
 }
 .page-container {
-    display: flex;
-    justify-content: center;
+    display: block;
 }
 .popup {
     position: fixed;
@@ -71,6 +70,9 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 990px;
+    border: 1px solid black;
+    margin: 0 auto;
 }
 .content-item {
     border-radius: 7px;
@@ -83,7 +85,7 @@ button {
 /* header.ejs */
 nav {
     display: flex;
-    background-color: white;
+    background-color: rgb(227, 255, 238);
 }
 nav .content {
     display: flex;
@@ -107,6 +109,8 @@ nav .links a:hover {
 
 /* index.ejs */
 .content-item {
+    display: flex;
+    flex-direction: column;
     background-color: white;
 }
 .landing-page .content-item {
@@ -115,18 +119,54 @@ nav .links a:hover {
     box-sizing: border-box;
     margin: 10px 10px;
 }
-.landing-page .item-1 {
+.landing-page .con-1 .content-item {
     flex-direction: column;
     text-align: center;
     padding: 2em;
-    padding-bottom: 6em;
     text-align: left;
+    font-size: 1.2em;
+}
+.landing-page .con-1 .item-1 {
     font-size: 1.5em;
+    padding-bottom: 6em;
 }
 .sign-up-button {
     background-color: rgb(229, 89, 52);
 }
 .sign-up-button:hover {
     background-color: rgb(247, 114, 77);
+}
+.landing-page img {
+    width: 250px;
+    height: 200px;
+}
 
+
+/* home.ejs */
+.home-page .con-1 {
+    border: 1px solid black;
+    width: 100%;
+    justify-content: left;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.home-page .con-2 {
+    background-color: white;
+}
+.home-page .con-2 .empty .item {
+    width: 80px;
+    margin: 0 5px;
+    background-color: rgb(15, 24, 75);
+    color: white;
+    text-align: center;
+}
+.home-page .con-2 .empty a {
+    padding: 9px 6px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.con-2 .empty .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
