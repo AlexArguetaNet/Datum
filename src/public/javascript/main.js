@@ -40,7 +40,7 @@ const addColumnField = (event) => {
     var newField = document.createElement('input');
     newField.setAttribute('type', 'text');
     newField.setAttribute('name', 'columns');
-    newField.setAttribute('placeholder', 'New Field');
+    newField.setAttribute('placeholder', 'New Column');
     
     fieldInputs.appendChild(newField);
 

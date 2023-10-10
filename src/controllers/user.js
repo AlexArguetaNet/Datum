@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const mCollection = require('../models/collection');
+const Form = require('../models/form');
 const bcrypt = require('bcrypt');
 
 // POST: Add a new user to the database
@@ -76,6 +77,7 @@ exports.getUserHomePage = async (req, res, next) => {
 
     try {
 
+        const forms = await Form.find({ user_id: id });
         const collections = await mCollection.find({ user_id: id });
 
         User.findOne({ _id: id })
@@ -84,7 +86,7 @@ exports.getUserHomePage = async (req, res, next) => {
             req.session.user = data;
             res.locals.loggedIn = data;
             req.session.save(() => {
-                res.render('user/home', { user: data, collections: collections });
+                res.render('user/home', { user: data, forms: forms, collections: collections });
             });
 
         })

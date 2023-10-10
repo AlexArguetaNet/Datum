@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const mCollection = require('../models/collection');
+const Form = require('../models/form');
 
 
 // GET: Get a collection
@@ -43,10 +44,22 @@ exports.createCollection = (req, res, next) => {
 // POST: Create a new form
 exports.createForm = (req, res, next) => {
 
-    const { columns } = req.body;
+    const { name, columns } = req.body;
 
-    console.log(columns);
+    const newForm = {
+        name: name,
+        user_id: req.session.user._id,
+        columns: columns,
+        rows: [],
+        favorite: false
+    }
 
-    res.redirect('/');
+    Form.create(newForm)
+    .then(() => {
+        res.redirect('/');
+    })
+    .catch((err) => {
+        res.json({msg:err});
+    });
 
 }

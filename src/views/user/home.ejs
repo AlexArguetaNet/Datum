@@ -12,42 +12,71 @@
         </div>
         <div class="content-container con-2">
 
-            <p>Forms</p>
-            <div class="forms">
-                
-            </div>
+            <% if (forms.length == 0 && collections.length == 0) { %>
+                <div class="empty">
 
-            <p>Collections</p>
-            <div class="collections">
-                
-                <% if (collections.length == 0) { %>
-
-                    <div class="empty">
-
-                        <h3>Looks like you have no records!</h3>
-                        <img src="/images/img3.jpg" alt="img3">
-                        <div class="buttons">
-                            <button onclick="showPopUp(event)" class="popup-button create-collection">+ Collection</button>
-                            <button onclick="showPopUp(event)" class="popup-button create-form">+ Form</button>
-                        </div>
-                
+                    <h3>Looks like you have no records!</h3>
+                    <img src="/images/img3.jpg" alt="img3">
+                    <div class="buttons">
+                        <button onclick="showPopUp(event)" class="popup-button create-collection">+ Collection</button>
+                        <button onclick="showPopUp(event)" class="popup-button create-form">+ Form</button>
                     </div>
+            
+                </div>
+            <% } else { %>
 
-                <% } else { %>
 
-                    <% collections.forEach((collection) => { %>
+                <p>Forms</p>
+                <div class="forms">
+                    
+                    <ul>
+                        <% forms.forEach((form) => { %>
 
-                        <a href="/form/collection/<%- collection._id %>">
-                            <div class="item">
-                                <h3><%- collection.name %></h3>
+                            <li>
+                                <div>
+                                    <p><%- form.name %></p>
+                                </div>
+                            </li>
+
+                       <% }) %>
+                    </ul>
+    
+                </div>
+    
+                <p>Collections</p>
+                <div class="collections">
+                    
+                    <% if (collections.length == 0) { %>
+    
+                        <div class="empty">
+    
+                            <h3>Looks like you have no records!</h3>
+                            <img src="/images/img3.jpg" alt="img3">
+                            <div class="buttons">
+                                <button onclick="showPopUp(event)" class="popup-button create-collection">+ Collection</button>
+                                <button onclick="showPopUp(event)" class="popup-button create-form">+ Form</button>
                             </div>
-                        </a>
+                    
+                        </div>
+    
+                    <% } else { %>
+    
+                        <% collections.forEach((collection) => { %>
+    
+                            <a href="/form/collection/<%- collection._id %>">
+                                <div class="item">
+                                    <h3><%- collection.name %></h3>
+                                </div>
+                            </a>
+    
+                        <% }) %>
+    
+                    <% }%>
+    
+                </div>
 
-                    <% }) %>
 
-                <% }%>
-
-            </div>
+            <% } %>
 
         </div>
     </div>
