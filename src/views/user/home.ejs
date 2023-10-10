@@ -30,8 +30,7 @@
                             <button onclick="showPopUp(event)" class="popup-button create-collection">+ Collection</button>
                             <button onclick="showPopUp(event)" class="popup-button create-form">+ Form</button>
                         </div>
-                        
-
+                
                     </div>
 
                 <% } else { %>
@@ -45,7 +44,6 @@
                         </a>
 
                     <% }) %>
-
 
                 <% }%>
 
@@ -71,17 +69,26 @@
     </div>
     <div class="popup create-form" onclick="closePopUp(event)">
         <div class="popup-form create-form-form">
-            <h2>Name your form</h2>
-            <form action="/user/create-user" method="POST">
+            <h2>Create a new form</h2>
+            <form action="/form/create-form" method="POST">
 
                 <div class="form-input-container">
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" placeholder="Form Name" required>
+
+                    <p>Form columns</p>
+                    <div class="field-inputs" id="field-inputs">
+                        <input type="text" name="columns" placeholder="e.g. Book title" required>
+                    </div>
+                    <div class="field-input-buttons">
+                        <button tpye="button" onclick="addColumnField(event)">+ Column</button>
+                        <button type="button" onclick="removeColumnField(event)">- Remove</button>
+                    </div>
                 </div>
-                
 
                 <input type="submit" class="popup-submit" value="Create">
 
             </form>
+            
         </div>
     </div>
 

@@ -38,3 +38,15 @@ exports.createCollection = (req, res, next) => {
     });
 
 }
+
+
+// POST: Create a new form
+exports.createForm = (req, res, next) => {
+
+    const { columns } = req.body;
+
+    console.log(columns);
+
+    res.redirect('/');
+
+}
