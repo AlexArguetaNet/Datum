@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-    <div class="page-container home-page">
+    <div class="page-container form-page">
 
         <div class="content-container con-1">
 
@@ -8,12 +8,11 @@
 
         </div>
 
-        <div class="table">
-
+        <div class="table-container">
 
             <table>
 
-                <tr>
+                <tr class="form-columns">
                     <% form.columns.forEach((column) => { %>
 
                         <td><%- column %></td>
@@ -22,9 +21,14 @@
                 </tr>
 
             </table>
+    
+        </div>
+
+        <div class="con-2">
             <button onclick="addEntryRow(event)">+ New Entry</button>
 
         </div>
+
 
     </div>    
 

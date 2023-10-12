@@ -74,7 +74,7 @@ exports.getForm = async (req, res, next) => {
 
         Form.findById({ _id: formId })
         .then((data) => {
-            res.render('form/form', { form: data });
+            res.render('form/form', { form: data, loggedIn: true });
         });
 
     } catch(e) {
