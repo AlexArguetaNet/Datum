@@ -3,8 +3,8 @@ const { createCollection, getCollection, createForm,getForm } = require('../cont
 
 const router = Router();
 
-router.get('/:userId/:formId', getForm);
 router.get('/collection/:id', getCollection);
+router.get('/:userId/:formId', getForm);
 router.post('/create-collection', createCollection);
 router.post('/create-form', createForm);
 
