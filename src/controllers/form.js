@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const mCollection = require('../models/collection');
 const Form = require('../models/form');
+const User = require('../models/user');
 
 
 // GET: Get a collection
@@ -61,5 +62,24 @@ exports.createForm = (req, res, next) => {
     .catch((err) => {
         res.json({msg:err});
     });
+
+}
+
+// GET: Get a form
+exports.getForm = async (req, res, next) => {
+
+    const { userId, formId } = req.params;
+
+    try {
+
+        Form.findById({ _id: formId })
+        .then((data) => {
+            res.render('form/form', { form: data });
+        });
+
+    } catch(e) {
+        res.json({msg:e});
+    }
+
 
 }

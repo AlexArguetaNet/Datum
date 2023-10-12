@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+
+    <div class="page-container home-page">
+
+        <div class="content-container con-1">
+
+            <h2><%- form.name %></h2>
+
+        </div>
+
+        <div class="table">
+
+            <table>
+
+                <tr>
+                    <% form.columns.forEach((column) => { %>
+
+                        <td><%- column %></td>
+
+                    <% }) %>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>    
+
+
+<%- include('../partials/footer.ejs') %>

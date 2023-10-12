@@ -29,17 +29,15 @@
                 <p>Forms</p>
                 <div class="forms">
                     
-                    <ul>
-                        <% forms.forEach((form) => { %>
+                    <% forms.forEach((form) => { %>
 
-                            <li>
-                                <div>
-                                    <%- form.name %>
-                                </div>
-                            </li>
+                        <a href="/form/<%- user._id %>/<%- form._id %>">
+                            <div class="form-list-item">
+                                <%- form.name %>
+                            </div>
+                        </a>
 
-                       <% }) %>
-                    </ul>
+                   <% }) %>
     
                 </div>
     

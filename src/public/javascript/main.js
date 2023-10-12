@@ -37,12 +37,19 @@ const addColumnField = (event) => {
     
     var fieldInputs = document.getElementById('field-inputs');
 
-    var newField = document.createElement('input');
-    newField.setAttribute('type', 'text');
-    newField.setAttribute('name', 'columns');
-    newField.setAttribute('placeholder', 'New Column');
-    
-    fieldInputs.appendChild(newField);
+    console.log(fieldInputs.childElementCount);
+
+    if (fieldInputs.childElementCount < 6) {
+
+        var newField = document.createElement('input');
+        newField.setAttribute('type', 'text');
+        newField.setAttribute('name', 'columns');
+        newField.setAttribute('placeholder', 'New Column');
+        newField.required = true;
+        
+        fieldInputs.appendChild(newField);
+
+    }
 
 }
 
