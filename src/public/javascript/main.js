@@ -69,10 +69,30 @@ const removeColumnField = (event) => {
 
 const addNewEntry = (event) => {
 
+    // Prevent button from submitting form
+    event.preventDefault();
+
     // Get the form heading and the number of columns
     var formHeadingRow = document.getElementById('form-columns');
     var columnCount = formHeadingRow.childElementCount;
 
+    // Get the table element
+    var table = document.getElementById('form-table');
+
+    // Create new table row
+    var newRow = document.createElement('tr');
+    
+    for (let i = 0; i < columnCount; i++) {
+
+        var newColumn = document.createElement('td');
+        newColumn.innerHTML += '<input type="text">';
+
+        newRow.appendChild(newColumn);
+
+    }
+
+    
+    table.appendChild(newRow);
 
 
 }

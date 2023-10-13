@@ -2,41 +2,35 @@
 
     <div class="page-container form-page">
 
-        <div class="content-container con-1">
+        <form action="/form/update/">
 
-            <h2><%- form.name %></h2>
+            <div class="content-container con-1">
 
-        </div>
-
-        <div class="table-container">
-
-            <table>
-
-                <tr class="form-columns" id="form-columns">
-                    <% form.columns.forEach((column) => { %>
-
-                        <td><%- column %></td>
-
-                    <% }) %>
-                </tr>
-
-                <tr>
-                    <% form.columns.forEach((column) => { %>
-
-                        <td>Test</td>
-
-                    <% }) %>
-                </tr>
-
-            </table>
+                <h2><%- form.name %></h2>
     
-        </div>
+            </div>
+    
+            <div class="table-container">
+    
+                <table id="form-table">
+    
+                    <tr class="form-columns" id="form-columns">
+                        <% form.columns.forEach((column) => { %>
+    
+                            <td><%- column %></td>
+    
+                        <% }) %>
+                    </tr>
+    
+                </table>
+        
+            </div>
+    
+            <div class="con-2">
+                <button onclick="addNewEntry(event)">+ New Entry</button>
+            </div>
 
-        <div class="con-2">
-            <button onclick="addNewEntry(event)">+ New Entry</button>
-
-        </div>
-
+        </form>
 
     </div>    
 

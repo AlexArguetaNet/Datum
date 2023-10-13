@@ -332,7 +332,6 @@ nav .links a:hover {
 
 /* form.ejs */
 .form-page {
-    background-color: rgb(209, 255, 240);
     margin: 0 auto;
     width: 90%;
     max-width: 740px;
@@ -352,5 +351,9 @@ nav .links a:hover {
 .form-page .form-columns td {
     text-align: center;
     background-color: rgb(219, 222, 255);
+}
+.new-row {
+    color: red;
+    background-color: rgb(141, 141, 141);
 }
 
