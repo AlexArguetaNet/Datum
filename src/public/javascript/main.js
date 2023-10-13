@@ -82,6 +82,7 @@ const addNewEntry = (event) => {
     // Create new table row
     var newRow = document.createElement('tr');
     
+    // Create columns for the new row
     for (let i = 0; i < columnCount; i++) {
 
         var newColumn = document.createElement('td');
