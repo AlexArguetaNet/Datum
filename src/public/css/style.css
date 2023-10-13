@@ -330,11 +330,15 @@ nav .links a:hover {
 }
 
 
-/* form.ejs */
+/* editform.ejs */
 .form-page {
     margin: 0 auto;
     width: 90%;
     max-width: 740px;
+}
+.form-page .con-1 {
+    display: flex;
+    align-items: center;
 }
 .form-page .table-container {
     overflow: scroll;

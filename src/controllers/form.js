@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const mCollection = require('../models/collection');
 const Form = require('../models/form');
+const Entry = require('../models/entry');
 const User = require('../models/user');
 
 
@@ -66,7 +67,7 @@ exports.createForm = (req, res, next) => {
 }
 
 // GET: Get a form
-exports.getForm = async (req, res, next) => {
+exports.getForm = (req, res, next) => {
 
     const { userId, formId } = req.params;
 
@@ -81,5 +82,56 @@ exports.getForm = async (req, res, next) => {
         res.json({msg:e});
     }
 
+}
+
+// GET: Get the page to edit a form
+exports.editForm = async (req, res, next) => {
+
+    const { formId } = req.params;
+
+    try {
+
+        Form.findById({ _id: formId })
+        .then((data) => {
+            res.render('form/editForm', { form: data, loggedIn: true });
+        });
+
+    } catch(e) {
+        res.json({msg:e});
+    }
+
+}
+
+// POST: Update a form
+// TODO: Address case where an exisitng 
+// entry needs to be updates
+exports.updateForm = async (req, res, next) => {
+
+    const { formId } = req.params;
+
+    // Save entries to the database and store the Ids
+    for (const entry in req.body) {
+        
+        var newEntry = {
+            form_id: formId,
+            data: req.body[entry]
+        }
+
+        // Wait for entries to be created and stored
+        // in the database
+        await Entry.create(newEntry);
+
+    }
+
+    // Get entry Ids from the database
+    const entries = await Entry.find({ form_id: formId });
+    
+    Form.findByIdAndUpdate({ _id: formId}, { entries: entries })
+    .then(() => {
+        res.redirect('/');
+    })
+    .catch((err) => {
+        res.json({ msg: err });
+    });
 
 }

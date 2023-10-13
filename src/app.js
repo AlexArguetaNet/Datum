@@ -20,6 +20,7 @@ app.use(session({
     saveUninitialized: true,
     resave: false
 }));
+app.use(methodOverride('_method'));
 app.use(mainRouter);
 app.use('/user', userRouter);
 app.use('/form', formRouter);

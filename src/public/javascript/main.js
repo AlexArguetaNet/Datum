@@ -78,21 +78,24 @@ const addNewEntry = (event) => {
 
     // Get the table element
     var table = document.getElementById('form-table');
+    entryCount = table.childElementCount;
 
     // Create new table row
     var newRow = document.createElement('tr');
+
     
     // Create columns for the new row
     for (let i = 0; i < columnCount; i++) {
 
         var newColumn = document.createElement('td');
-        newColumn.innerHTML += '<input type="text">';
+        newColumn.setAttribute('class', `entry`);
+        newColumn.innerHTML += `<input type="text" name="entry${entryCount}">`;
 
         newRow.appendChild(newColumn);
 
     }
 
-    
+    entryCount++;
     table.appendChild(newRow);
 
 

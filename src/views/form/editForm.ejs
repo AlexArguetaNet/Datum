@@ -1,0 +1,52 @@
+<%- include('../partials/header.ejs') %>
+
+    <div class="page-container form-page">
+
+        <form action="/form/update/<%- form._id %>?_method=PATCH" method="POST">
+
+            <div class="content-container con-1">
+
+                <h2>Edit <%- form.name %></h2>
+                <input type="submit" value="Save">
+            </div>
+    
+            <div class="table-container">
+    
+                <table id="form-table">
+    
+                    <tr class="form-columns" id="form-columns">
+                        <% form.columns.forEach((column) => { %>
+    
+                            <td><%- column %></td>
+    
+                        <% }) %>
+                    </tr>
+    
+                    <% form.entries.forEach((entry) => { %>
+    
+                        <tr>
+    
+                            <% entry.data.forEach((cell) => { %>
+    
+                                <td><input type="text" value="<%- cell %>"></td>
+    
+                            <% }) %>
+    
+                        </tr>
+    
+                    <% }) %>
+    
+                </table>
+        
+            </div>
+    
+            <div class="con-2">
+                <button onclick="addNewEntry(event)">+ New Entry</button>
+            </div>
+
+        </form>
+
+    </div>    
+
+
+<%- include('../partials/footer.ejs') %>
