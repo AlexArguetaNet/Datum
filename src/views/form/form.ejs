@@ -12,10 +12,18 @@
 
             <table>
 
-                <tr class="form-columns">
+                <tr class="form-columns" id="form-columns">
                     <% form.columns.forEach((column) => { %>
 
                         <td><%- column %></td>
+
+                    <% }) %>
+                </tr>
+
+                <tr>
+                    <% form.columns.forEach((column) => { %>
+
+                        <td>Test</td>
 
                     <% }) %>
                 </tr>
@@ -25,7 +33,7 @@
         </div>
 
         <div class="con-2">
-            <button onclick="addEntryRow(event)">+ New Entry</button>
+            <button onclick="addNewEntry(event)">+ New Entry</button>
 
         </div>
 

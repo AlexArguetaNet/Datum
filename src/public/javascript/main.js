@@ -66,3 +66,13 @@ const removeColumnField = (event) => {
     }
 
 }
+
+const addNewEntry = (event) => {
+
+    // Get the form heading and the number of columns
+    var formHeadingRow = document.getElementById('form-columns');
+    var columnCount = formHeadingRow.childElementCount;
+
+
+
+}

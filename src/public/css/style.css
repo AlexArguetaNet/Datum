@@ -345,15 +345,12 @@ nav .links a:hover {
     padding-left: 10px;
 }
 .form-page table {
-    background: rgb(219, 222, 255);
+    background: rgb(255, 255, 255);
     width: 100%;
-    margin: 10px 5px;
+    
 }
-.form-page table:nth-child(1) {
+.form-page .form-columns td {
     text-align: center;
-    margin: 10px 0px;
+    background-color: rgb(219, 222, 255);
 }
-.form-page table td {
-    background-color: white;
-    border-top: 1px solif red;
-}
+
