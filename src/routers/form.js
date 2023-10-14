@@ -15,6 +15,6 @@ router.get('/edit/:formId', editForm);
 router.get('/:userId/:formId', getForm);
 router.post('/create-collection', createCollection);
 router.post('/create-form', createForm);
-router.patch('/update/:formId', updateForm);
+router.put('/update/:formId', updateForm);
 
 module.exports = router;

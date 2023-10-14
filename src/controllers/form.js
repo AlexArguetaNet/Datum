@@ -75,7 +75,13 @@ exports.getForm = (req, res, next) => {
 
         Form.findById({ _id: formId })
         .then((data) => {
-            res.render('form/form', { form: data, loggedIn: true });
+
+            if (data.entries.length == 0) {
+                res.redirect(`/form/edit/${data._id}`);
+            } else {
+                res.render('form/form', { form: data, loggedIn: true });
+            }
+
         });
 
     } catch(e) {
@@ -102,33 +108,30 @@ exports.editForm = async (req, res, next) => {
 
 }
 
+
 // POST: Update a form
-// TODO: Address case where an exisitng 
-// entry needs to be updates
 exports.updateForm = async (req, res, next) => {
 
     const { formId } = req.params;
+    const entries = [];
 
-    // Save entries to the database and store the Ids
+    // Get the entries
     for (const entry in req.body) {
-        
+
         var newEntry = {
             form_id: formId,
-            data: req.body[entry]
+            data: req.body[entry],
+            createdAt: new Date()
         }
 
-        // Wait for entries to be created and stored
-        // in the database
-        await Entry.create(newEntry);
+        entries.push(newEntry);
 
     }
 
-    // Get entry Ids from the database
-    const entries = await Entry.find({ form_id: formId });
-    
-    Form.findByIdAndUpdate({ _id: formId}, { entries: entries })
+    // Update the form
+    Form.findByIdAndUpdate({ _id: formId }, { entries: entries })
     .then(() => {
-        res.redirect('/');
+        res.redirect(`/form/${req.session.user._id}/${formId}`);
     })
     .catch((err) => {
         res.json({ msg: err });

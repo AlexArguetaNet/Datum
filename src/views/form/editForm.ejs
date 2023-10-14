@@ -2,11 +2,11 @@
 
     <div class="page-container form-page">
 
-        <form action="/form/update/<%- form._id %>?_method=PATCH" method="POST">
+        <form action="/form/update/<%- form._id %>?_method=PUT" method="POST">
 
             <div class="content-container con-1">
 
-                <h2>Edit <%- form.name %></h2>
+                <h2><%- form.name %></h2>
                 <input type="submit" value="Save">
             </div>
     
@@ -21,18 +21,21 @@
     
                         <% }) %>
                     </tr>
-    
+                    
+                    <% var i = 0; %>
+
                     <% form.entries.forEach((entry) => { %>
     
                         <tr>
     
                             <% entry.data.forEach((cell) => { %>
     
-                                <td><input type="text" value="<%- cell %>"></td>
+                                <td><input type="text" name="existingEntry<%- i %>" value="<%- cell %>"></td>
     
                             <% }) %>
     
                         </tr>
+                        <% i++ %>
     
                     <% }) %>
     
@@ -42,6 +45,7 @@
     
             <div class="con-2">
                 <button onclick="addNewEntry(event)">+ New Entry</button>
+                <button onclick="removeEntry(event)">- Remove Entry</button>
             </div>
 
         </form>

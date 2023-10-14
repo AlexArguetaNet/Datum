@@ -1,4 +1,3 @@
-
 window.onload = () => {
     
     // Check for popup elements in the html
@@ -89,7 +88,7 @@ const addNewEntry = (event) => {
 
         var newColumn = document.createElement('td');
         newColumn.setAttribute('class', `entry`);
-        newColumn.innerHTML += `<input type="text" name="entry${entryCount}">`;
+        newColumn.innerHTML += `<input type="text" name="newEntry${entryCount}">`;
 
         newRow.appendChild(newColumn);
 
@@ -98,5 +97,19 @@ const addNewEntry = (event) => {
     entryCount++;
     table.appendChild(newRow);
 
+
+}
+
+
+const removeEntry = (event) => {
+
+    event.preventDefault();
+
+    var formTable = document.getElementById('form-table');
+    var tableRows = formTable.getElementsByTagName('tr');
+
+    if (tableRows.length > 1) {
+        formTable.removeChild(tableRows[tableRows.length - 1]);
+    }
 
 }
