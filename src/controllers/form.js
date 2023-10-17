@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const mCollection = require('../models/collection');
 const Form = require('../models/form');
-const Entry = require('../models/entry');
 const User = require('../models/user');
+const PDFDocument = require('pdfkit');
+const puppeteer = require('puppeteer');
+require('dotenv').config();
 
 
 // GET: Get a collection
@@ -136,5 +138,33 @@ exports.updateForm = async (req, res, next) => {
     .catch((err) => {
         res.json({ msg: err });
     });
+
+}
+
+// GET: Generate a pdf of the form
+exports.generatePDF = async (req, res, next) => {
+
+    const { userId, formId } = req.params;
+    
+    // Create browser instance
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    // Website url to exports as pdf
+    const websiteUrl = `http://localhost:${process.env.PORT}/form/${ userId }/${ formId }`;
+
+    // Open page in url
+    await page.goto(websiteUrl, { waituntil: 'networkidle0'});
+    await page.emulateMediaType('screen');
+
+    // Generate pdf
+    const pdf = await page.pdf({
+        printBackground: true,
+        format: 'A4',
+    });
+
+    await browser.close();
+    res.setHeader('Content-type', 'application/pdf');
+    res.send(pdf);
 
 }
