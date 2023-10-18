@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="page-container form-page">
+
+        <div class="content-container con-1">
+            <h2><%- form.name %></h2>
+        </div>
+
+        <div class="table-container">
+
+            <table id="form-table">
+    
+                <tr class="form-columns" id="form-columns">
+                    <% form.columns.forEach((column) => { %>
+
+                        <td><%- column %></td>
+
+                    <% }) %>
+                </tr>
+
+                <% form.entries.forEach((entry) => { %>
+
+                    <tr>
+
+                        <% entry.data.forEach((cell) => { %>
+
+                            <td><%- cell %></td>
+
+                        <% }) %>
+
+                    </tr>
+
+                <% }) %>
+
+            </table>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

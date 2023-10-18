@@ -350,14 +350,30 @@ nav .links a:hover {
 .form-page table {
     background: rgb(255, 255, 255);
     width: 100%;
-    
+    border-collapse: collapse;
 }
 .form-page .form-columns td {
     text-align: center;
     background-color: rgb(219, 222, 255);
+}
+.form-page td {
+    padding: 5px 6px;
 }
 .new-row {
     color: red;
     background-color: rgb(141, 141, 141);
 }
 
+.editCell {
+    text-align: left;
+}
+.editCell input {
+    border: 1px solid lightgray;
+    
+}
+.form-page table tr {
+    border-bottom: 1px solid rgba(215, 215, 215, 0.956);
+}
+.form-page table tr:hover {
+    background-color: rgb(255, 244, 229);
+}

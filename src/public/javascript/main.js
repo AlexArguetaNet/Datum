@@ -97,7 +97,6 @@ const addNewEntry = (event) => {
     entryCount++;
     table.appendChild(newRow);
 
-
 }
 
 

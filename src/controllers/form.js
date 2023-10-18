@@ -1,11 +1,9 @@
-const mongoose = require('mongoose');
 const mCollection = require('../models/collection');
 const Form = require('../models/form');
-const User = require('../models/user');
-const PDFDocument = require('pdfkit');
 const puppeteer = require('puppeteer');
 require('dotenv').config();
 
+var form = null;
 
 // GET: Get a collection
 exports.getCollection = (req, res, next) => {
@@ -141,17 +139,30 @@ exports.updateForm = async (req, res, next) => {
 
 }
 
+// GET: Get pdf template
+exports.getPdfTemplate = (req, res) => {
+ 
+    res.render('pdf/pdfTemplate', { form: form });
+    form = null;
+
+}
+
 // GET: Generate a pdf of the form
 exports.generatePDF = async (req, res, next) => {
 
     const { userId, formId } = req.params;
+    
+    form = await Form.findById({ _id: formId });
+
     
     // Create browser instance
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     // Website url to exports as pdf
-    const websiteUrl = `http://localhost:${process.env.PORT}/form/${ userId }/${ formId }`;
+    // const websiteUrl = `http://localhost:${process.env.PORT}/form/${ userId }/${ formId }`;
+
+    const websiteUrl = `http://localhost:${process.env.PORT}/form/pdf-template`;
 
     // Open page in url
     await page.goto(websiteUrl, { waituntil: 'networkidle0'});
